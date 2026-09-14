@@ -18,16 +18,17 @@ try {
     // Vérification de l'action demandée
     switch ($_GET['action']) {
         case 'afficherPageAccueil':
+            // Ex. d'URL : index.php?action=afficherPageAccueil
+            // Appel de la fonction du contrôleur pour afficher la page d'accueil
             afficherPageAccueil();
             break;
         case 'afficherFormulaire':
-            afficherFormulaire();
-            break;
-        case 'inscrireAuCours':
-            inscrireAuCours();
-            break;
-        case 'payerEnLigne':
-            payerEnLigne();
+        // Ex. d'URL : index.php?action=afficherPageAccueil
+        // Appel de la fonction du contrôleur pour afficher la page d'accueil
+        afficherFormulaire();
+        break;
+        case 'inscrireInfolettre':
+            inscrireInfolettre();
             break;
         default:
             // Si l'action demandée n'est pas reconnue, on lance une exception
