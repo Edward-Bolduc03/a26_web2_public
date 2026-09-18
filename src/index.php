@@ -2,7 +2,7 @@
 // Le fichier index.php joue le rôle de point d'entrée (routeur) de l'application.
 // Ainsi, toutes les requêtes HTTP doivent passer par ce fichier.
 // Il analyse le paramètre "action" de l'URL et appelle la fonction appropriée dans le contrôleur.
-
+session_start();
 
 // Chargement des contrôleurs
 require_once 'controleur/controleur.php';

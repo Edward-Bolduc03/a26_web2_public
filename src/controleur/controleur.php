@@ -34,6 +34,7 @@ function validerDonneesInscrireAUnCours()
 function inscrireAuCours() {
     $erreurs = validerDonneesInscrireAUnCours();
     if (!empty($erreurs)) {
+        $_SESSION['erreurs'] = $erreurs;
         // Si les données ne sont pas valides, on redirige vers le formulaire
         header('Location: index.php?action=afficherFormulaire');
         exit;
