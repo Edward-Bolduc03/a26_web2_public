@@ -9,6 +9,7 @@ function afficherPageConnexion()
     if (isset($_SESSION['nomUtilisateur']))
         {
             header('location:index.php?action=afficherPageProfil');
+            exit;
         }
     require 'vue/connexion.php';
 }
@@ -66,4 +67,17 @@ function deconnecter()
     session_destroy();
     header('location:index.php?action=afficherPageAccueil');
     exit;
+}
+
+function modifierProfil()
+{
+    if (!isset($_SESSION['nomUtilisateur']))
+        {
+            header('location:index.php?action=afficherPageConnexion');
+            exit;
+        }
+    $_SESSION['nomUtilisateur'] = $_POST['newUsername'];
+    $_SESSION['email'] = $_POST['newEmail'];
+
+    header('Location: index.php?action=afficherPageProfil');
 }

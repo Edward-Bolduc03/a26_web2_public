@@ -22,6 +22,7 @@
             </ul>
             <!-- Boutons de navigation à droite -->
             <ul class="navbar-nav">
+                <?php if (!estConnecte()) { ?>
                 <!-- Bouton vers la page de connexion -->
                 <li class="nav-item">
                     <a
@@ -30,6 +31,9 @@
                         Connexion
                     </a>
                 </li>
+                <?php } ?>
+
+                <?php if (estConnecte()) { ?>
                 <!-- Bouton vers la page de profil -->
                 <li class="nav-item">
                     <a
@@ -46,6 +50,7 @@
                         Déconnexion
                     </a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
@@ -67,5 +72,10 @@ function NavClassDefault()
     if (!isset($_GET['action'])) {
         echo ' active ';
     }
+}
+
+function estConnecte()
+{
+    return isset($_SESSION['nomUtilisateur']);
 }
 ?>
