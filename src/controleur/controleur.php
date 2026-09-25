@@ -1,6 +1,11 @@
 <?php
+require_once "modele/modeleFilms.php";
+
 function afficherPageAccueil()
 {
+    ModeleFilms::ajouterFilm("Mon Film");
+    $requeteFilms = ModeleFilms::obtenirFilm();
+
     require 'vue/accueil.php';
 }
 
