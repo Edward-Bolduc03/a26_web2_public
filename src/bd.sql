@@ -22,7 +22,7 @@ INSERT INTO `utilisateurs` (`id`, `nom`, `mot_de_passe`) VALUES
 INSERT INTO `utilisateurs` (`id`, `nom`, `mot_de_passe`, `email`, `image`) VALUES
     (2, 'user1', '$2y$12$aCX4MDnlrfoHgS5BDmQ8Me/mfO37WpHdbMtgj1s8Ul5EtceePi/mi', 'user1@example.com', 'https://placehold.co/42'); -- Mot de passe haché pour 'password1'
 
--- Table des articles
+-- Table des articles 
 CREATE TABLE `articles` (
     `id` int NOT NULL AUTO_INCREMENT,
     `titre` varchar(255) NOT NULL,

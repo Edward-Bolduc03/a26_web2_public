@@ -1,7 +1,9 @@
 <?php
+require_once "modele/modeleArticles.php";
 
 function afficherPageArticles()
 {
+    $requeteArticles = modeleArticles::obtenirArticles();
     require 'vue/articles.php';
 }
 
