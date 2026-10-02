@@ -9,11 +9,11 @@ SET default_storage_engine=InnoDB;
 CREATE TABLE `utilisateurs` (
     `id` int NOT NULL AUTO_INCREMENT,
     `nom` varchar(45) NOT NULL,
-    `mot_de_passe` varchar(45) NOT NULL,
+    `mot_de_passe` varchar(255) NOT NULL,
     `email` varchar(255) DEFAULT NULL,
     `image` varchar(2048) DEFAULT NULL,
     PRIMARY KEY (`id`),
-    UNIQUE (`nom`)
+    UNIQUE (`nom`) 
 );
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `mot_de_passe`) VALUES

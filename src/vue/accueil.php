@@ -14,6 +14,22 @@ ob_start();
 
 <h1 class="text-center">Accueil</h1>
 
+<?php /*
+    $mdp = "Password";
+    $hash = password_hash($mdp, PASSWORD_DEFAULT);
+    echo $hash;
+    echo "<br>";
+    if(password_verify("password", $hash)) {
+        echo "Oui";
+    }
+    else{
+        echo "Non";
+    }
+        */
+?>
+
+
+
 <?php
 // Récupération de tout le contenu généré depuis le début de la mise en tampon.
 // Le contenu est ensuite stocké dans la variable $contenu.
