@@ -11,7 +11,7 @@ assert(is_array($cartes), 'La variable $cartes doit être un tableau.');
     <?php foreach ($cartes as $numeroLigne => $ligne) { ?>
         <div class="row flex-fill">
             <?php foreach ($ligne as  $numeroColonne => $carte) { ?>
-                <div class="col align-content-center carte border h-100 <?php echo $carte; ?>">
+                <div data-couleur="<?php echo $carte; ?>" class="col align-content-center carte border h-100">
                     Carte <?php echo $numeroLigne . '-' . $numeroColonne; ?>
                 </div>
             <?php } ?>
@@ -20,5 +20,8 @@ assert(is_array($cartes), 'La variable $cartes doit être un tableau.');
 
 </div>
 
+<script src="js/memoire.js"></script>
+
 <?php $contenu = ob_get_clean(); ?>
 <?php require 'vue/gabarit.php'; ?>
+

@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    container_name: apache_php
+    container_name: apache_php2
     ports:
       - "80:80"
     volumes:
@@ -18,7 +18,7 @@ services:
 
   db:
     image: mariadb:12
-    container_name: mariadb
+    container_name: mariadb2
     restart: unless-stopped
     ports:
       - "3306:3306"
