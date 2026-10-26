@@ -17,7 +17,9 @@
     }
     ?>
 
-    <form method="post" action="index.php?action=connecter" class="needs-validation" novalidate>
+    <div id="reponse"></div>
+
+    <form id="forumulaireConnexion" method="post" action="index.php?action=connecter" class="needs-validation" novalidate>
         <div class="mb-3 mt-3">
             <label for="nomUtilisateur" class="form-label">Nom d'utilisateur&nbsp;:</label>
             <input type="text" class="form-control" id="nomUtilisateur" placeholder="Entrez votre nom d'utilisateur" name="nomUtilisateur" required minlength="3" maxlength="45">
@@ -37,6 +39,8 @@
         <button type="submit" class="btn btn-primary">Se connecter</button>
     </form>
 </div>
+
+<script src="js/connexion.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 

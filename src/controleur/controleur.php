@@ -58,7 +58,8 @@ function connecter()
     if (!empty($erreurs)) {
         // Ajout des erreurs à la session pour les afficher sur la page de connexion
         $_SESSION['erreurs'] = $erreurs;
-        header('Location: index.php?action=afficherPageConnexion');
+        http_response_code(400);
+        echo implode("<br>", $erreurs);
         exit;
     }
 
@@ -66,8 +67,9 @@ function connecter()
     $requeteUtilisateurs = ModeleUtilisateurs::obtenirUtilisateur($_POST['nomUtilisateur']);
     $utilisateur = $requeteUtilisateurs->fetch();
     if (!$utilisateur || !password_verify($_POST['motDePasse'], $utilisateur['mot_de_passe'])) {
-        $_SESSION['erreurs'] = ['Nom d\'utilisateur ou mot de passe incorrect.'];
-        header('Location: index.php?action=afficherPageConnexion');
+        $erreurs = ['Nom d\'utilisateur ou mot de passe incorrect.'];
+        http_response_code(400);
+        echo implode("<br>", $erreurs);
         exit;
     }
 
