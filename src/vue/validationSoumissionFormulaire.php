@@ -1,6 +1,3 @@
-<?php $titreOnglet = 'Validation soumission'; ?>
-<?php ob_start(); ?>
-
 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
     <div class="card">
         <div class="card-header">
@@ -13,6 +10,3 @@
         </div>
     </div>
 </div>
-
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'vue/gabarit.php'; ?>
