@@ -15,6 +15,26 @@ function validerExempleRegexEnJS(valeur) {
     return [];
 }
 
+function validerTelephoneRegexEnJS(valeur) {
+    const telephoneRegex = /^\(?\d{3}\)?\s?\d{3}-\d{4}$/;
+
+    if (!telephoneRegex.test(valeur)) {
+        return ["Le champ 'ExRegex' ne correspond pas au format requis. OK"];
+    }
+
+    return [];
+}
+
+function validerEmailRegexEnJS(valeur) {
+    const emailRegex = /^[a-zA-Z0-9\.\-_]{2,}[@][a-zA-Z0-9\.\-]{2,}[\.][a-zA-Z]{2,6}$/;
+
+    if (!emailRegex.test(valeur)) {
+        return ["Le champ 'ExRegex' ne correspond pas au format requis. OK"];
+    }
+
+    return [];
+}
+
 async function gererSoumissionFormulaireRegex(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -32,7 +52,9 @@ async function gererSoumissionFormulaireRegex(event) {
     // Validation JavaScript
     if (!skipValidationJS) {
         const erreurs = [
-            ...validerExempleRegexEnJS(formulaire.exRegex.value)
+            ...validerExempleRegexEnJS(formulaire.exRegex.value),
+            ...validerTelephoneRegexEnJS(formulaire.telephone.value),
+            ...validerEmailRegexEnJS(formulaire.email.value)
         ];
 
         if (erreurs.length > 0) {

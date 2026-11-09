@@ -22,6 +22,35 @@
                 Veuillez entrer le texte "abc123".
             </div>
         </div>
+        
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Numéro de téléphone (111) 111-1111</label>
+            <input 
+                type="text" 
+                name="telephone" 
+                id="telephone" 
+                class="form-control" 
+                required 
+                pattern="\(?\d{3}\)?\s?\d{3}-\d{4}" 
+            />
+            <div class="invalid-feedback">
+                Veuillez entrer un Numéro de téléphone.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">Adresse courriel : email@server.com</label>
+            <input 
+                type="text" 
+                name="email" 
+                id="email" 
+                class="form-control" 
+                required pattern="[a-zA-Z0-9\.\-_]{2,}[@][a-zA-Z0-9\.\-]{2,}[\.][a-zA-Z]{2,6}" 
+            />
+            <div class="invalid-feedback">
+                Veuillez entrer une Adresse courriel.
+            </div>
+        </div>
 
         <div class="mb-3">
             <label for="skipValidationHTML" class="form-label">Envoyer sans valider HTML</label>
