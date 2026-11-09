@@ -6,7 +6,7 @@ function init() {
 }
 
 function validerExempleRegexEnJS(valeur) {
-    const regexExRegex = /^abc123$/;
+    const regexExRegex = /^[a-zA-Z][0-9][a-zA-Z] ?[0-9][a-zA-Z][0-9]$/;
 
     if (!regexExRegex.test(valeur)) {
         return ["Le champ 'ExRegex' ne correspond pas au format requis. OK"];

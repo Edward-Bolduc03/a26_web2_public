@@ -9,8 +9,15 @@
     <form id="formulaireRegex" class="needs-validation" novalidate>
 
         <div class="mb-3">
-            <label for="exRegex" class="form-label">Exemple de validation Regex</label>
-            <input type="text" name="exRegex" id="exRegex" class="form-control" required minlength="6" maxlength="6" pattern="abc123" />
+            <label for="exRegex" class="form-label">Code Postal (G5Y 6Y1)</label>
+            <input 
+                type="text" 
+                name="exRegex" 
+                id="exRegex" 
+                class="form-control" 
+                required  
+                pattern="[a-zA-Z][0-9][a-zA-Z] ?[0-9][a-zA-Z][0-9]" 
+            />
             <div class="invalid-feedback">
                 Veuillez entrer le texte "abc123".
             </div>

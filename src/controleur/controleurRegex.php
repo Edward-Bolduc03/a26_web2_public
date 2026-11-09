@@ -8,7 +8,7 @@ function validerDonneesSoumettreFormulaireRegex()
 {
     $erreurs = [];
     
-    $regexExRegex = '/^abc123$/';
+    $regexExRegex = '/^[a-zA-Z][0-9][a-zA-Z] ?[0-9][a-zA-Z][0-9]$/';
 
     if (empty($_POST['exRegex']) || !preg_match($regexExRegex, $_POST['exRegex'])) {
         $erreurs[] = 'Vide ou format invalide (ex: abc123).';
