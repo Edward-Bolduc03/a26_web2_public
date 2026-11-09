@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#Permettre l'accès au dossier public
+RewriteCond %{REQUEST_URI}  !public
+RewriteRule (.*) index.php [QSA,L]
+
+php_value upload_max_filesize 50M
+php_value post_max_size 100M
